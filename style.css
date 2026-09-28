@@ -1,109 +1,432 @@
-/* Reset básico e tipografia */
+/* ==========================================================================
+   RESET & VARIÁVEIS GLOBAIS
+   ========================================================================== */
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #06b6d4;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --bg-alt: #161e2e;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --correct: #10b981;
+  --incorrect: #ef4444;
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
-/* Estilo do Cabeçalho */
-header {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 3rem 1rem;
-    text-align: center;
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+/* ==========================================================================
+   NAVEGAÇÃO
+   ========================================================================== */
+.navbar {
+  background-color: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
 }
 
-header h2 {
-    margin: 10px 0 0 0;
-    font-weight: 300;
-    font-size: 1.2rem;
-    color: #bdc3c7;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Container Principal */
-main {
-    max-width: 800px;
-    margin: -30px auto 40px auto;
-    padding: 30px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
 }
 
-h3 {
-    color: #2980b9;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 10px;
-    margin-top: 30px;
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
 }
 
-/* Estilos do Quiz */
-.question {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    font-size: 1.1rem;
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
 }
 
-.answers {
-    margin-bottom: 20px;
-    padding-left: 10px;
+.nav-links a:hover {
+  color: var(--secondary);
 }
 
-.answers label {
-    display: block;
-    margin-bottom: 8px;
-    cursor: pointer;
-    background: #f9f9f9;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background 0.2s;
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
 }
 
-.answers label:hover {
-    background: #eef2f5;
+.badge {
+  display: inline-block;
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
-/* Botão */
-button {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-    margin-top: 10px;
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-button:hover {
-    background-color: #2ecc71;
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 750px;
+  margin: 0 auto 2rem;
 }
 
-/* Resultados */
-#results {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #2c3e50;
-    padding: 15px;
-    border-radius: 5px;
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2c3e50;
-    color: white;
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+/* ==========================================================================
+   SEÇÕES GERAIS
+   ========================================================================== */
+.section {
+  padding: 4rem 0;
+}
+
+.bg-alt {
+  background-color: var(--bg-alt);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   CARDS DE CONTEÚDO
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   PILARES
+   ========================================================================== */
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.pilar-card {
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.pilar-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pilar-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pilar-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   ÉTICA E DESAFIOS
+   ========================================================================== */
+.content-box {
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-item h4 {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin-bottom: 0.3rem;
+}
+
+.info-item p {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   QUIZ INTERATIVO
+   ========================================================================== */
+.quiz-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  max-width: 750px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.quiz-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.quiz-question {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.option-btn {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option-btn:hover:not(:disabled) {
+  background-color: rgba(99, 102, 241, 0.15);
+  border-color: var(--primary);
+}
+
+.option-btn.correct {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  border-color: var(--correct) !important;
+  color: #a7f3d0;
+}
+
+.option-btn.incorrect {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  border-color: var(--incorrect) !important;
+  color: #fca5a5;
+}
+
+.quiz-explanation {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--secondary);
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.quiz-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.results-container {
+  text-align: center;
+}
+
+.results-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.results-score {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--secondary);
+  margin: 1rem 0;
+}
+
+.results-text {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .quiz-card {
+    padding: 1.5rem;
+  }
 }
