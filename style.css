@@ -1,0 +1,109 @@
+/* Reset básico e tipografia */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h2 {
+    margin: 10px 0 0 0;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #bdc3c7;
+}
+
+/* Container Principal */
+main {
+    max-width: 800px;
+    margin: -30px auto 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h3 {
+    color: #2980b9;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+/* Estilos do Quiz */
+.question {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.answers {
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.answers label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    background: #f9f9f9;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.answers label:hover {
+    background: #eef2f5;
+}
+
+/* Botão */
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2ecc71;
+}
+
+/* Resultados */
+#results {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+}
